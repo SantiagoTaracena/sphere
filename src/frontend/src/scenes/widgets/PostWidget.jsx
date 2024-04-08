@@ -10,7 +10,7 @@ import Friend from "components/Friend";
 import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setPost } from "state";
+import { setPosts } from "state";
 
 const PostWidget = ({
   postId,
@@ -44,7 +44,7 @@ const PostWidget = ({
       body: JSON.stringify({ userId: loggedInUserId }),
     });
     const updatedPost = await response.json();
-    dispatch(setPost({ post: updatedPost }));
+    dispatch(setPosts({ post: updatedPost }));
   };
 
   return (
